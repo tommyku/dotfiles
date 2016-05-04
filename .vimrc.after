@@ -1,0 +1,18 @@
+" theme
+colorscheme oceandeep
+" clipboard
+set clipboard=unnamed
+" GUI options
+set guioptions-=T
+set guioptions-=R
+set guioptions-=r
+set guioptions-=l
+set guioptions-=L
+set guifont=Roboto\ Mono\ Medium\ for\ Powerline\ Medium\ 10
+" CtrlP
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+" remap leader key
+let mapleader = "\\"

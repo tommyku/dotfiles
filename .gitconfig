@@ -1,0 +1,30 @@
+[user]
+	name = Tommy Ku
+	email = zoo1929@outlook.com
+[alias]
+	ca = commit -a
+	ci = commit --interactive
+	co = checkout
+	st = !git status && echo && git l origin..HEAD
+	ls = ls-files --stage --abbrev
+	up = remote update
+	info = show-ref -h
+	d = whatchanged -p
+	l = log --graph --oneline --all --decorate
+	l2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	l3 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' HEAD
+	lg = log -p
+	b = branch -av
+	t = tag -n
+	who = shortlog -s --
+	graph = log --graph --oneline --all --decorate
+	f = !git fetch --all --tags --verbose && git remote --verbose update --prune
+	r = rebase -i HEAD~10
+	stat = log --oneline --shortstat
+	# e.g. git track v2.0.0 kites/v2.0.0
+	track = checkout --track -b
+[push]
+	default = matching
+[core]
+	autocrlf = input
+	editor = nano
