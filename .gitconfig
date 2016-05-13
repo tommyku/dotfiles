@@ -1,6 +1,6 @@
 [user]
-	name = Tommy Ku
-	email = zoo1929@outlook.com
+	name = Username
+	email = Email
 [alias]
 	ca = commit -a
 	ci = commit --interactive
