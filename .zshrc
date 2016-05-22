@@ -46,11 +46,11 @@ ZSH_THEME="fino"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-autosuggestions git git-flow rbenv z bundler history-substring-search rails)
+plugins=(git git-flow rbenv z bundler laravel4 laravel5 history-substring-search rails zsh-autosuggestions)
 
 # User configuration
 
-export PATH="/home/kuchunkit/.rbenv/shims:/home/kuchunkit/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/Android/Sdk/tools"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -80,7 +80,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -92,25 +91,28 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-
 # some more ls aliases
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
-alias sl='cat ~/.sl'
 
 # git aliases
-alias gl2='git l2 '
-alias gl3='git l3 '
+alias gl2='git lg2'
+alias gl3='git lg3'
 alias gfa='git remote | xargs -l git fetch -p '
-alias gff='git flow feature '
 
 # emacs alias
 alias enw='emacs -nw '
-alias eq='emacs -nw -q '
+alias eq='enw -q '
+
+# rbenv
+eval "$(rbenv init -)"
 
 # 256 colors for terminal
 export TERM=xterm-256color
 
-# history-substring-search color
+# html2jade
+alias html2jadenb='html2jade --noemptypipe --bodyless '
+
+# history-substring-search
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
