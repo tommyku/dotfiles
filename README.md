@@ -3,6 +3,7 @@
 - Ubuntu 14.04
 - git
 - vim-gnome
+- npm
 - Dependencies of robbyrussell/oh-my-zsh
 - Dependencies of carlhuda/janus
 
@@ -21,6 +22,10 @@ $ git clone https://github.com/vim-airline/vim-airline-themes ~/.janus/vim-airli
 $ git clone https://github.com/powerline/fonts /tmp/fonts
 $ cd /tmp/fonts
 $ ./install.sh
+```
+
+```sh
+npm install -g diff-so-fancy
 ```
 
 ```sh
