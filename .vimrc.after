@@ -19,5 +19,9 @@ let g:ctrlp_cmd = 'CtrlP'
 set cursorline
 " map also semocolon to colon
 nnoremap ; :
+" Esc is too far
+imap jj <Esc>
+imap ` <Esc>
+imap ;; <Esc>
 " airline theme
 let g:airline_theme='papercolor'
