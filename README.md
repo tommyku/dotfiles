@@ -6,6 +6,7 @@
 - npm
 - Dependencies of robbyrussell/oh-my-zsh
 - Dependencies of carlhuda/janus
+- Dependencies of neovim
 
 ## Installation
 
@@ -27,6 +28,15 @@ $ ./install.sh
 ```sh
 npm install -g diff-so-fancy
 ```
+
+~~~ sh
+$ sudo apt-get install software-properties-common python-dev python-pip python3-dev python3-pip silversearcher-ag
+$ sudo add-apt-repository ppa:neovim-ppa/unstable
+$ sudo apt-get update
+$ sudo apt-get install neovim
+$ ln -s ~/.vim ~/.config/nvim
+$ ln -s ~/.vimrc ~/.config/nvim/init.vim
+~~~
 
 ```sh
 $ ./bootstrap.sh

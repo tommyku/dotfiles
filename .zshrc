@@ -105,6 +105,10 @@ alias gfa='git remote | xargs -l git fetch -p '
 alias enw='emacs -nw '
 alias eq='enw -q '
 
+# vim alias
+alias v='vim'
+alias nv='nvim'
+
 # rbenv
 eval "$(rbenv init -)"
 
