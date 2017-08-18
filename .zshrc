@@ -5,8 +5,9 @@ export ZSH=/home/kuchunkit/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
-ZSH_THEME="fino"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="fino"
+#ZSH_THEME="nebirhos"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -46,11 +47,11 @@ ZSH_THEME="fino"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-flow rbenv z bundler laravel4 laravel5 history-substring-search rails zsh-autosuggestions)
+plugins=(zsh-autosuggestions git common-aliases rbenv z bundler history-substring-search docker docker-compose fancy-ctrl-z)
 
 # User configuration
-
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.rbenv/bin:$HOME/.rbenv/shims:$HOME/Android/Sdk/tools"
+export TODO_PATH='/opt/todo.txt_cli-2.9/'
+export PATH="/home/kuchunkit/.rbenv/shims:/home/kuchunkit/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$TODO_PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -59,6 +60,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
+export EDITOR='nvim'
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
@@ -80,6 +82,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -91,32 +94,44 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+
 # some more ls aliases
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
+alias sl='cat ~/.sl'
 
 # git aliases
-alias gl2='git lg2'
-alias gl3='git lg3'
+alias gl='tig'
+alias gl2='git l2'
+alias gl3='git l3'
 alias gfa='git remote | xargs -l git fetch -p '
-
-# emacs alias
-alias enw='emacs -nw '
-alias eq='enw -q '
+alias gff='git flow feature '
+alias gffp='gff publish'
+alias gffco='gff checkout'
+alias gffs='gff start'
+alias gsu='git submodule update '
+alias duck='gl2; gst; ga .; gst; git commit -v'
+alias commit='git commit -v'
 
 # vim alias
 alias v='vim'
-alias nv='nvim'
-
-# rbenv
-eval "$(rbenv init -)"
+alias n='nvim'
 
 # 256 colors for terminal
 export TERM=xterm-256color
 
-# html2jade
-alias html2jadenb='html2jade --noemptypipe --bodyless '
-
-# history-substring-search
+# history-substring-search color
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
+
+eval "$(rbenv init -)"
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/git
+source /usr/local/bin/virtualenvwrapper.sh
+
+# todo-cli
+export TODOTXT_DEFAULT_ACTION=ls
+export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k 2,2 -k 1,1n'
+alias t="$TODO_PATH/todo.sh -d $TODO_PATH/todo.cfg"
