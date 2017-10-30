@@ -99,7 +99,6 @@ fi
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
-alias sl='cat ~/.sl'
 
 # git aliases
 alias gl='tig'
@@ -120,6 +119,9 @@ alias n='nvim'
 
 # 256 colors for terminal
 export TERM=xterm-256color
+
+alias vimrcafter='n ~/.vimrc.after'
+alias vimrcbefore='n ~/.vimrc.before'
 
 # history-substring-search color
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=green,fg=white,bold'
