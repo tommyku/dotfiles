@@ -1,7 +1,7 @@
 " theme
 colorscheme jellybeans
 " clipboard
-set clipboard=unnamed
+" set clipboard=unnamed
 " GUI options
 set guioptions-=T
 set guioptions-=R
@@ -12,12 +12,25 @@ set gfn=Roboto\ Mono\ Medium\ for\ Powerline\ Medium\ 10
 " remap leader key
 let mapleader = "\\"
 " CtrlP
-let g:ctrlp_user_command = ['ag %s --files-with-matches -g ""']
+" The Silver Searcher
+" https://robots.thoughtbot.com/faster-grepping-in-vim
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = ['ag %s -l --nocolor -g ""', '.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+
+  " bind K to grep word under cursor
+  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+endif
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|log\|tmp$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
-let g:ctrlp_user_command += ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " highlight current line
@@ -52,3 +65,13 @@ map [n :lprev<CR>
 
 set relativenumber
 set number
+
+" Use hjkl instead of arrow keys
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
