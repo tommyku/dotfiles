@@ -50,8 +50,7 @@ ZSH_THEME="robbyrussell"
 plugins=(zsh-autosuggestions git common-aliases rbenv z bundler history-substring-search docker docker-compose fancy-ctrl-z)
 
 # User configuration
-export TODO_PATH='/opt/todo.txt_cli-2.9/'
-export PATH="/home/kuchunkit/.rbenv/shims:/home/kuchunkit/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$TODO_PATH"
+export PATH="/home/kuchunkit/.rbenv/shims:/home/kuchunkit/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -97,8 +96,10 @@ fi
 
 # some more ls aliases
 alias ll='ls -alFh'
+alias lah='ls -lah'
 alias la='ls -A'
 alias l='ls -CF'
+alias sl='ls'
 
 # git aliases
 alias gl='tig'
@@ -133,7 +134,5 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/git
 source /usr/local/bin/virtualenvwrapper.sh
 
-# todo-cli
-export TODOTXT_DEFAULT_ACTION=ls
-export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k 2,2 -k 1,1n'
-alias t="$TODO_PATH/todo.sh -d $TODO_PATH/todo.cfg"
+# like Mac OSX's `open` command
+alias xopen='xdg-open &>/dev/null'
