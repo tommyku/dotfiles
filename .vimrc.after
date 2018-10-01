@@ -14,8 +14,6 @@ let mapleader = "\\"
 " CtrlP
 " The Silver Searcher
 " https://robots.thoughtbot.com/faster-grepping-in-vim
-" If Silver Searcher ag is not installed
-let g:ctrlp_user_command += ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -75,6 +73,4 @@ nnoremap <Right> <Nop>
 inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 inoremap <Left> <Nop>
-
-let g:jsx_ext_required = 0
 inoremap <Right> <Nop>
