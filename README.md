@@ -20,7 +20,9 @@ $ curl -L https://bit.ly/janus-bootstrap | bash
 $ mkdir ~/.janus && cd ~/.janus
 $ git clone https://github.com/vim-airline/vim-airline ~/.janus/vim-airline
 $ git clone https://github.com/vim-airline/vim-airline-themes ~/.janus/vim-airline-themes
-$ git clone git://github.com/digitaltoad/vim-pug.git
+$ git clone https://github.com/rhysd/clever-f.vim
+$ git clone https://github.com/mhinz/vim-startify
+$ git clone https://github.com/takac/vim-hardtime
 $ git clone https://github.com/powerline/fonts /tmp/fonts
 $ cd /tmp/fonts
 $ ./install.sh

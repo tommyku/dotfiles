@@ -93,7 +93,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-
 # some more ls aliases
 alias ll='ls -alFh'
 alias lah='ls -lah'
@@ -118,6 +117,11 @@ alias commit='git commit -v'
 alias v='vim'
 alias n='nvim'
 
+# config
+alias zshrc="$EDITOR ~/.zshrc"
+alias vimrcafter="$EDITOR ~/.vimrc.after"
+alias vimrcbefore="$EDITOR ~/.vimrc.before"
+
 # 256 colors for terminal
 export TERM=xterm-256color
 
@@ -136,3 +140,14 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # like Mac OSX's `open` command
 alias xopen='xdg-open &>/dev/null'
+
+# convenient aliases
+alias sa='sudo apt'
+alias sai='sa install'
+alias sauu='sa update && sa upgrade'
+alias mem='free -h'
+alias disk='df -h'
+
+# https://remysharp.com/2018/08/23/cli-improved
+alias cat='bat'
+alias top='htop'
