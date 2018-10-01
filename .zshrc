@@ -151,3 +151,10 @@ alias disk='df -h'
 # https://remysharp.com/2018/08/23/cli-improved
 alias cat='bat'
 alias top='htop'
+
+# python SimpleHTTPServer
+alias shs='python -m SimpleHTTPServer 8080'
+
+# https://opensource.com/article/18/9/handy-bash-aliases
+alias untar='tar -zxvf '
+alias ping='ping -c 5'
