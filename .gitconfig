@@ -27,6 +27,7 @@
 
 [push]
 	default = matching
+
 [core]
 	autocrlf = input
 	editor = vim
@@ -37,3 +38,6 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
+
+[merge]
+	tool = vimdiff
